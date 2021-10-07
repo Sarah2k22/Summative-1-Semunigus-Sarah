@@ -11,12 +11,12 @@ import java.util.*;
 public class Magic8Ball {
     private List<String> answer = new ArrayList();
     public Magic8Ball(){
-        answer.add("answer1");
-        answer.add("answer2");
-        answer.add("answer3");
-        answer.add("answer4");
-        answer.add("answer5");
-        answer.add("answer6");
+        answer.add("It is certain.");
+        answer.add(" It is decidedly so");
+        answer.add(" Without a doubt");
+        answer.add("Yes definitely");
+        answer.add("You may rely on it");
+        answer.add("Most likely.");
     }
 
     @RequestMapping(value = "/magic8Ball", method= RequestMethod.POST)
