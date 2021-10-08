@@ -20,15 +20,16 @@ public class Magic8Ball {
     }
 
     @RequestMapping(value = "/magic8Ball", method= RequestMethod.POST)
-    @ResponseStatus(value = HttpStatus.CREATED)
+    @ResponseStatus(value = HttpStatus.OK)
     @ResponseBody
     //the question being asked
-    public MagicBall getAnswer(@RequestBody String question){
+    public MagicBall getAnswer(@RequestBody MagicBall question){
         Random random= new Random();
         int index = random.nextInt(answer.size());
 
-        MagicBall response= new MagicBall(question, answer.get(index), index);
-        return response;
+        question.setId(index);
+        question.setAnswer(answer.get(index));
+        return question;
 
     }
 
